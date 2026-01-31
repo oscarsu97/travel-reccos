@@ -1,12 +1,35 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Heart, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, Heart, ChevronLeft, ChevronRight, Users, Activity } from 'lucide-react';
+import FeedbackModal from './FeedbackModal';
 
 const CardView = ({ activity, currentIndex, totalCount, onAction }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [showFeedbackModal, setShowFeedbackModal] = useState(false);
+  const [pendingSwipeDirection, setPendingSwipeDirection] = useState(null);
 
   const images = [activity.image1, activity.image2, activity.image3];
+
+  // Helper function to get badge colors
+  const getCrowdColor = (level) => {
+    switch (level) {
+      case 'Low': return 'bg-green-500/90';
+      case 'Medium': return 'bg-yellow-500/90';
+      case 'High': return 'bg-orange-500/90';
+      case 'Extreme': return 'bg-red-500/90';
+      default: return 'bg-gray-500/90';
+    }
+  };
+
+  const getEffortColor = (level) => {
+    switch (level) {
+      case 'Low': return 'bg-green-500/90';
+      case 'Medium': return 'bg-yellow-500/90';
+      case 'High': return 'bg-red-500/90';
+      default: return 'bg-gray-500/90';
+    }
+  };
 
   const nextImage = () => {
     setDirection(1);
@@ -19,8 +42,22 @@ const CardView = ({ activity, currentIndex, totalCount, onAction }) => {
   };
 
   const handleAction = (status) => {
+    // Instead of immediately proceeding, show feedback modal
+    setPendingSwipeDirection(status);
+    setShowFeedbackModal(true);
+  };
+
+  const handleFeedbackSubmit = (feedback) => {
+    setShowFeedbackModal(false);
     setCurrentImageIndex(0);
-    onAction(status);
+    // Pass both the status and feedback to parent
+    onAction(pendingSwipeDirection, feedback);
+    setPendingSwipeDirection(null);
+  };
+
+  const handleFeedbackClose = () => {
+    setShowFeedbackModal(false);
+    setPendingSwipeDirection(null);
   };
 
   const variants = {
@@ -132,6 +169,24 @@ const CardView = ({ activity, currentIndex, totalCount, onAction }) => {
                 </motion.button>
               </div>
 
+              {/* Badges - Top Left */}
+              <div className="absolute top-4 left-4 flex flex-col gap-2">
+                {/* Crowd Level Badge */}
+                <div className={`${getCrowdColor(activity.crowdLevel)} backdrop-blur px-3 py-1.5 rounded-full flex items-center gap-1.5`}>
+                  <Users className="w-4 h-4 text-white" />
+                  <span className="text-white text-xs font-semibold">
+                    {activity.crowdLevel}
+                  </span>
+                </div>
+                {/* Physical Effort Badge */}
+                <div className={`${getEffortColor(activity.physicalEffort)} backdrop-blur px-3 py-1.5 rounded-full flex items-center gap-1.5`}>
+                  <Activity className="w-4 h-4 text-white" />
+                  <span className="text-white text-xs font-semibold">
+                    {activity.physicalEffort} Effort
+                  </span>
+                </div>
+              </div>
+
               {/* Image Counter Overlay - Top Right */}
               <div className="absolute top-4 right-4 bg-black/60 backdrop-blur px-3 py-1.5 rounded-full">
                 <span className="text-white text-xs font-semibold">
@@ -194,6 +249,15 @@ const CardView = ({ activity, currentIndex, totalCount, onAction }) => {
           </div>
         </div>
       </div>
+
+      {/* Feedback Modal */}
+      <FeedbackModal
+        isOpen={showFeedbackModal}
+        activity={activity}
+        swipeDirection={pendingSwipeDirection}
+        onSubmit={handleFeedbackSubmit}
+        onClose={handleFeedbackClose}
+      />
     </div>
   );
 };

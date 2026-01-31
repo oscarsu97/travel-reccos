@@ -17,12 +17,17 @@ function App() {
     setScreen('cards');
   };
 
-  const handleAction = (status) => {
+  const handleAction = (status, feedback) => {
     const currentActivity = activities[currentIndex];
     
-    if (status === 'Liked') {
-      setResults([...results, currentActivity]);
-    }
+    // Store both likes and passes with feedback
+    const result = {
+      activity: currentActivity,
+      status: status,
+      feedback: feedback
+    };
+
+    setResults([...results, result]);
 
     if (currentIndex < activities.length - 1) {
       setCurrentIndex(currentIndex + 1);
