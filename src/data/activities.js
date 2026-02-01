@@ -278,15 +278,5 @@ export const activities = [
     image2: "https://cdn.savvytokyo.com/app/uploads/2019/07/Totoro.jpg",
     image3: "https://res.klook.com/image/upload/w_750,h_469,c_fill,q_85/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/xfz1z0ubx7ss5txg2pkf.jpg"
   },
-  {
-    id: 27,
-    name: "Akihabara Maid Cafe",
-    specificActivities: "casting 'magic spells' on your omelet rice...",
-    description: "Niche Otaku culture.",
-    crowdLevel: "Medium",
-    physicalEffort: "Low",
-    image1: "https://media.cnn.com/api/v1/images/stellar/prod/170525144526-home-maid-cafe.jpg?q=w_1600,h_900,x_0,y_0,c_fill",
-    image2: "https://images.unsplash.com/photo-1574268685169-c0c5004746f3?w=800&q=80",
-    image3: "https://images.unsplash.com/photo-1622359487532-6807f4337678?w=800&q=80"
-  }
 ];
+

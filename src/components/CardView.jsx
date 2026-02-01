@@ -93,12 +93,12 @@ const CardView = ({ activity, currentIndex, totalCount, onAction }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-      {/* Mobile Container - Strict max-w-md and h-screen */}
-      <div className="w-full max-w-md h-screen flex flex-col overflow-hidden bg-white shadow-2xl">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+      {/* Mobile Container - Polished Card */}
+      <div className="w-full max-w-md h-[95vh] flex flex-col bg-white rounded-3xl shadow-2xl overflow-hidden">
         
         {/* Progress Bar */}
-        <div className="bg-white px-4 py-3 border-b border-gray-200">
+        <div className="bg-white px-6 py-3 border-b border-gray-100">
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-medium text-gray-600">
               {currentIndex + 1} of {totalCount}
@@ -131,8 +131,8 @@ const CardView = ({ activity, currentIndex, totalCount, onAction }) => {
             }}
             className="flex-1 flex flex-col"
           >
-            {/* Image Section - 60% of screen height */}
-            <div className="relative bg-gray-200" style={{ height: '60vh' }}>
+            {/* Image Section - Fixed aspect ratio */}
+            <div className="relative bg-gray-200 mx-4 mt-4 rounded-3xl overflow-hidden" style={{ height: '55vh' }}>
               <AnimatePresence initial={false} custom={direction} mode="wait">
                 <motion.img
                   key={currentImageIndex}
@@ -169,20 +169,20 @@ const CardView = ({ activity, currentIndex, totalCount, onAction }) => {
                 </motion.button>
               </div>
 
-              {/* Badges - Top Left */}
-              <div className="absolute top-4 left-4 flex flex-col gap-2">
+              {/* Badges - Top Left (Absolute inside image) */}
+              <div className="absolute top-4 left-4 flex flex-col gap-2 z-10">
                 {/* Crowd Level Badge */}
-                <div className={`${getCrowdColor(activity.crowdLevel)} backdrop-blur px-3 py-1.5 rounded-full flex items-center gap-1.5`}>
-                  <Users className="w-4 h-4 text-white" />
-                  <span className="text-white text-xs font-semibold">
+                <div className="bg-black/60 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg">
+                  <Users className="w-3.5 h-3.5" />
+                  <span className="font-semibold">
                     {activity.crowdLevel}
                   </span>
                 </div>
                 {/* Physical Effort Badge */}
-                <div className={`${getEffortColor(activity.physicalEffort)} backdrop-blur px-3 py-1.5 rounded-full flex items-center gap-1.5`}>
-                  <Activity className="w-4 h-4 text-white" />
-                  <span className="text-white text-xs font-semibold">
-                    {activity.physicalEffort} Effort
+                <div className="bg-black/60 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg">
+                  <Activity className="w-3.5 h-3.5" />
+                  <span className="font-semibold">
+                    {activity.physicalEffort}
                   </span>
                 </div>
               </div>
@@ -209,15 +209,15 @@ const CardView = ({ activity, currentIndex, totalCount, onAction }) => {
               </div>
             </div>
 
-            {/* Content Section - Scrollable if needed */}
-            <div className="flex-1 overflow-y-auto px-6 py-5 bg-white">
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">
+            {/* Content Section - Proper padding, never touches edges */}
+            <div className="flex-1 overflow-y-auto px-6 pt-4 pb-2 bg-white">
+              <h2 className="text-2xl font-bold text-gray-900 mb-1.5">
                 {activity.name}
               </h2>
-              <p className="text-sm text-gray-500 font-medium mb-4">
+              <p className="text-sm text-gray-500 font-medium mb-3">
                 {activity.description}
               </p>
-              <h3 className="text-xs font-semibold text-gray-700 uppercase tracking-wide mb-2">
+              <h3 className="text-xs font-semibold text-gray-700 uppercase tracking-wide mb-1.5">
                 Activities
               </h3>
               <p className="text-sm text-gray-700 leading-relaxed">
@@ -227,25 +227,27 @@ const CardView = ({ activity, currentIndex, totalCount, onAction }) => {
           </motion.div>
         </AnimatePresence>
 
-        {/* Fixed Action Buttons - Bottom */}
-        <div className="bg-white border-t border-gray-200 px-6 py-4">
-          <div className="flex gap-4">
+        {/* Floating Action Buttons - Bottom */}
+        <div className="bg-white px-6 py-5 border-t border-gray-100">
+          <div className="flex items-center justify-center gap-6">
             <motion.button
-              whileTap={{ scale: 0.95 }}
+              whileTap={{ scale: 0.9 }}
               onClick={() => handleAction('Pass')}
-              className="flex-1 py-4 bg-red-500 text-white rounded-2xl font-bold text-lg shadow-lg flex items-center justify-center gap-2 active:bg-red-600 transition-colors"
+              className="h-16 w-16 bg-rose-500 hover:bg-rose-600 text-white rounded-full shadow-xl flex items-center justify-center transition-colors active:shadow-2xl"
             >
-              <X className="w-6 h-6" strokeWidth={3} />
-              Pass
+              <X className="w-7 h-7" strokeWidth={3} />
             </motion.button>
             <motion.button
-              whileTap={{ scale: 0.95 }}
+              whileTap={{ scale: 0.9 }}
               onClick={() => handleAction('Liked')}
-              className="flex-1 py-4 bg-green-500 text-white rounded-2xl font-bold text-lg shadow-lg flex items-center justify-center gap-2 active:bg-green-600 transition-colors"
+              className="h-16 w-16 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full shadow-xl flex items-center justify-center transition-colors active:shadow-2xl"
             >
-              <Heart className="w-6 h-6" fill="currentColor" />
-              Like
+              <Heart className="w-7 h-7" fill="currentColor" />
             </motion.button>
+          </div>
+          <div className="flex items-center justify-center gap-6 mt-2">
+            <span className="text-xs font-semibold text-rose-500 w-16 text-center">Pass</span>
+            <span className="text-xs font-semibold text-emerald-500 w-16 text-center">Like</span>
           </div>
         </div>
       </div>
