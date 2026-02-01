@@ -11,7 +11,26 @@ const CardView = ({ activity, currentIndex, totalCount, onAction }) => {
 
   const images = [activity.image1, activity.image2, activity.image3];
 
-  // Helper function to get badge colors
+  // Helper functions for user-friendly labels
+  const getCrowdLabel = (level) => {
+    switch (level) {
+      case 'Low': return 'Few People';
+      case 'Medium': return 'Moderate Crowd';
+      case 'High': return 'Very Crowded';
+      case 'Extreme': return 'Packed';
+      default: return level;
+    }
+  };
+
+  const getEffortLabel = (level) => {
+    switch (level) {
+      case 'Low': return 'Low Physical Effort';
+      case 'Medium': return 'Moderate Physical Effort';
+      case 'High': return 'Physically Challenging';
+      default: return level;
+    }
+  };
+
   const getCrowdColor = (level) => {
     switch (level) {
       case 'Low': return 'bg-green-500/90';
@@ -132,7 +151,7 @@ const CardView = ({ activity, currentIndex, totalCount, onAction }) => {
             className="flex-1 flex flex-col"
           >
             {/* Image Section - Fixed aspect ratio */}
-            <div className="relative bg-gray-200 mx-4 mt-4 rounded-3xl overflow-hidden" style={{ height: '55vh' }}>
+            <div className="relative bg-gray-200 mx-4 mt-4 rounded-3xl overflow-hidden" style={{ height: '55vh', position: 'relative' }}>
               <AnimatePresence initial={false} custom={direction} mode="wait">
                 <motion.img
                   key={currentImageIndex}
@@ -148,62 +167,89 @@ const CardView = ({ activity, currentIndex, totalCount, onAction }) => {
                   src={images[currentImageIndex]}
                   alt={activity.name}
                   className="w-full h-full object-cover"
+                  style={{ position: 'absolute', top: 0, left: 0, zIndex: 1 }}
                 />
               </AnimatePresence>
 
-              {/* Image Navigation Buttons */}
-              <div className="absolute inset-0 flex items-center justify-between px-4 pointer-events-none">
-                <motion.button
-                  whileTap={{ scale: 0.9 }}
+              {/* Image Navigation Buttons - Enhanced visibility */}
+              <div style={{ position: 'absolute', top: '50%', left: 0, right: 0, transform: 'translateY(-50%)', display: 'flex', justifyContent: 'space-between', padding: '0 1.5rem', pointerEvents: 'none', zIndex: 50 }}>
+                <button
                   onClick={prevImage}
-                  className="w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center shadow-lg pointer-events-auto"
+                  style={{
+                    width: '48px',
+                    height: '48px',
+                    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: '0 10px 25px rgba(0, 0, 0, 0.3)',
+                    pointerEvents: 'auto',
+                    border: '2px solid rgba(229, 231, 235, 1)',
+                    cursor: 'pointer',
+                    zIndex: 50
+                  }}
                 >
-                  <ChevronLeft className="w-5 h-5 text-gray-800" />
-                </motion.button>
-                <motion.button
-                  whileTap={{ scale: 0.9 }}
+                  <ChevronLeft style={{ width: '24px', height: '24px', color: '#111827', strokeWidth: 2.5 }} />
+                </button>
+                <button
                   onClick={nextImage}
-                  className="w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center shadow-lg pointer-events-auto"
+                  style={{
+                    width: '48px',
+                    height: '48px',
+                    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: '0 10px 25px rgba(0, 0, 0, 0.3)',
+                    pointerEvents: 'auto',
+                    border: '2px solid rgba(229, 231, 235, 1)',
+                    cursor: 'pointer',
+                    zIndex: 50
+                  }}
                 >
-                  <ChevronRight className="w-5 h-5 text-gray-800" />
-                </motion.button>
+                  <ChevronRight style={{ width: '24px', height: '24px', color: '#111827', strokeWidth: 2.5 }} />
+                </button>
               </div>
 
-              {/* Badges - Top Left (Absolute inside image) */}
-              <div className="absolute top-4 left-4 flex flex-col gap-2 z-10">
+              {/* Badges - Top Left - User Friendly */}
+              <div style={{ position: 'absolute', top: '1rem', left: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', zIndex: 40 }}>
                 {/* Crowd Level Badge */}
-                <div className="bg-black/60 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg">
-                  <Users className="w-3.5 h-3.5" />
-                  <span className="font-semibold">
-                    {activity.crowdLevel}
+                <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.75)', backdropFilter: 'blur(12px)', color: 'white', fontSize: '0.75rem', padding: '0.5rem 0.875rem', borderRadius: '9999px', display: 'flex', alignItems: 'center', gap: '0.5rem', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)' }}>
+                  <Users style={{ width: '14px', height: '14px' }} />
+                  <span style={{ fontWeight: '700', letterSpacing: '0.025em' }}>
+                    {getCrowdLabel(activity.crowdLevel)}
                   </span>
                 </div>
                 {/* Physical Effort Badge */}
-                <div className="bg-black/60 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg">
-                  <Activity className="w-3.5 h-3.5" />
-                  <span className="font-semibold">
-                    {activity.physicalEffort}
+                <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.75)', backdropFilter: 'blur(12px)', color: 'white', fontSize: '0.75rem', padding: '0.5rem 0.875rem', borderRadius: '9999px', display: 'flex', alignItems: 'center', gap: '0.5rem', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)' }}>
+                  <Activity style={{ width: '14px', height: '14px' }} />
+                  <span style={{ fontWeight: '700', letterSpacing: '0.025em' }}>
+                    {getEffortLabel(activity.physicalEffort)}
                   </span>
                 </div>
               </div>
 
               {/* Image Counter Overlay - Top Right */}
-              <div className="absolute top-4 right-4 bg-black/60 backdrop-blur px-3 py-1.5 rounded-full">
-                <span className="text-white text-xs font-semibold">
+              <div style={{ position: 'absolute', top: '1rem', right: '1rem', backgroundColor: 'rgba(0, 0, 0, 0.7)', backdropFilter: 'blur(12px)', padding: '0.375rem 0.75rem', borderRadius: '9999px', zIndex: 40 }}>
+                <span style={{ color: 'white', fontSize: '0.75rem', fontWeight: '600' }}>
                   {currentImageIndex + 1}/{images.length}
                 </span>
               </div>
 
               {/* Image Indicator Dots - Bottom */}
-              <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+              <div style={{ position: 'absolute', bottom: '1rem', left: 0, right: 0, display: 'flex', justifyContent: 'center', gap: '0.5rem', zIndex: 40 }}>
                 {images.map((_, idx) => (
                   <div
                     key={idx}
-                    className={`h-2 rounded-full transition-all ${
-                      idx === currentImageIndex
-                        ? 'w-8 bg-white'
-                        : 'w-2 bg-white/50'
-                    }`}
+                    style={{
+                      height: '8px',
+                      width: idx === currentImageIndex ? '32px' : '8px',
+                      backgroundColor: idx === currentImageIndex ? 'white' : 'rgba(255, 255, 255, 0.5)',
+                      borderRadius: '9999px',
+                      transition: 'all 0.3s'
+                    }}
                   />
                 ))}
               </div>

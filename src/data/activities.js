@@ -8,8 +8,7 @@ export const activities = [
     crowdLevel: "High",
     physicalEffort: "Low",
     image1: "https://www.travelcaffeine.com/wp-content/uploads/2025/01/sarah-bricker-shibuya-sky-observation-deck-scramble-crossing-skyscraper-tokyo-japan-280.jpg",
-    image2: "https://res.klook.com/image/upload/w_750,h_469,c_fill,q_85/activities/cqrw8fwyig8fesvigr2v.jpg",
-    image3: "https://images.unsplash.com/photo-1513407030348-c983a97b98d8?w=800&q=80"
+    image2: "https://res.klook.com/image/upload/w_750,h_469,c_fill,q_85/activities/cqrw8fwyig8fesvigr2v.jpg"
   },
   {
     id: 2,
@@ -19,8 +18,7 @@ export const activities = [
     crowdLevel: "High",
     physicalEffort: "Medium", // Walking barefoot, knee-deep water
     image1: "https://res.klook.com/image/upload/w_750,h_469,c_fill,q_85/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/gevr3bbvg613i008ix7v.jpg",
-    image2: "https://www.arc-magazine.com/wp-content/uploads/2024/07/TeamLab.jpg",
-    image3: "https://images.unsplash.com/photo-1617791160505-6f00504e3519?w=800&q=80"
+    image2: "https://www.arc-magazine.com/wp-content/uploads/2024/07/TeamLab.jpg"
   },
   {
     id: 3,
@@ -30,9 +28,7 @@ export const activities = [
     crowdLevel: "High",
     physicalEffort: "Low",
     image1: "https://images.squarespace-cdn.com/content/v1/5d3ee66abacfa00001df6854/6bda2be3-8e08-457b-adfd-3d16c9cec68e/image.png",
-    image2: "https://thisgirlabroad.com/wp-content/uploads/2017/05/memory-lane-tokyo-3.jpg",
-    image3: "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?w=800&q=80"
-  },
+    image2: "https://thisgirlabroad.com/wp-content/uploads/2017/05/memory-lane-tokyo-3.jpg"  },
   {
     id: 4,
     name: "Fushimi Inari Shrine",
@@ -41,8 +37,7 @@ export const activities = [
     crowdLevel: "Extreme", // At the bottom
     physicalEffort: "High", // If hiking to the top
     image1: "https://static.wixstatic.com/media/60507d_62d1072427ad43fcacc5197259ec80f7~mv2.png/v1/fill/w_980,h_654,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/60507d_62d1072427ad43fcacc5197259ec80f7~mv2.png",
-    image2: "https://www.agoda.com/wp-content/uploads/2024/07/Fushimi-Inari-Shrine-Kyoto-Japan.jpg",
-    image3: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&q=80"
+    image2: "https://www.agoda.com/wp-content/uploads/2024/07/Fushimi-Inari-Shrine-Kyoto-Japan.jpg"
   },
   {
     id: 5,
@@ -52,8 +47,7 @@ export const activities = [
     crowdLevel: "Extreme",
     physicalEffort: "Medium", // Lots of walking/standing
     image1: "https://blog.japanwondertravel.com/wp-content/uploads/2021/01/Tsukiji.jpg",
-    image2: "https://www.jackieradophotography.com/wp-content/uploads/2020/07/Tsukiji-Auction-floor.jpg",
-    image3: "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?w=800&q=80"
+    image2: "https://www.jackieradophotography.com/wp-content/uploads/2020/07/Tsukiji-Auction-floor.jpg"
   },
 
   // --- GLOBAL HIGH SIGNALS ---
@@ -66,9 +60,7 @@ export const activities = [
     crowdLevel: "High",
     physicalEffort: "High", // Steep stairs, altitude
     image1: "https://cdn.mos.cms.futurecdn.net/WFJBpzs4J5x3uvbeKdnm3i.jpg",
-    image2: "https://images.ctfassets.net/6kwmfvcr3yfi/4TB3lWNDixGBeV7CWKVYP1/9610143224bdd4d11b6ad18936ddbe0b/machu_picchu_llamas.jpg",
-    image3: "https://images.unsplash.com/photo-1533285754432-6a365bb247bc?w=800&q=80"
-  },
+    image2: "https://images.ctfassets.net/6kwmfvcr3yfi/4TB3lWNDixGBeV7CWKVYP1/9610143224bdd4d11b6ad18936ddbe0b/machu_picchu_llamas.jpg"  },
   {
     id: 7,
     name: "Serengeti Safari",
@@ -77,8 +69,7 @@ export const activities = [
     crowdLevel: "Low",
     physicalEffort: "Low", // Sitting in jeep
     image1: "https://www.mgahinganationalpark.org/wp-content/uploads/2024/09/Serengeti-National-Park-1-1.jpg",
-    image2: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/16/30/83/serengeti-safari-camp.jpg?w=900&h=500&s=1",
-    image3: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800&q=80"
+    image2: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/16/30/83/serengeti-safari-camp.jpg?w=900&h=500&s=1"
   },
   {
     id: 8,
@@ -88,8 +79,7 @@ export const activities = [
     crowdLevel: "Low",
     physicalEffort: "Low", // Cold but passive
     image1: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&q=80",
-    image2: "https://media.cnn.com/api/v1/images/stellar/prod/220523111444-08-iceland-hot-pools-mvatn.jpg?c=original",
-    image3: "https://images.unsplash.com/photo-1579033461380-adb47c3eb938?w=800&q=80"
+    image2: "https://media.cnn.com/api/v1/images/stellar/prod/220523111444-08-iceland-hot-pools-mvatn.jpg?c=original"
   },
   {
     id: 9,
@@ -99,8 +89,7 @@ export const activities = [
     crowdLevel: "Extreme", // In Oia at sunset
     physicalEffort: "Medium", // Steps
     image1: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&q=80",
-    image2: "https://images.unsplash.com/photo-1533105079780-92b9be482077?w=800&q=80",
-    image3: "https://images.unsplash.com/photo-1613395877344-13d4c2ce5f47?w=800&q=80"
+    image2: "https://images.unsplash.com/photo-1533105079780-92b9be482077?w=800&q=80"
   },
   {
     id: 10,
@@ -110,8 +99,7 @@ export const activities = [
     crowdLevel: "High",
     physicalEffort: "Low", // Driving
     image1: "https://cdn.kimkim.com/files/a/content_articles/featured_photos/9cfca9ba3cfd18b589b99960d5c7b8902535655a/big-46868363c5dd3f2e1bb0b963d8b500f9.jpg",
-    image2: "https://cdn.kimkim.com/files/a/images/efdb13fa73c198591c17e92714c8b491eba092b8/big-3d4e30a164f1a7c0d8b12430fd7b2e0d.jpg",
-    image3: "https://images.unsplash.com/photo-1544212530-97d8c0b2404f?w=800&q=80"
+    image2: "https://cdn.kimkim.com/files/a/images/efdb13fa73c198591c17e92714c8b491eba092b8/big-3d4e30a164f1a7c0d8b12430fd7b2e0d.jpg"
   },
   {
     id: 11,
@@ -131,9 +119,7 @@ export const activities = [
     description: "Rose city candlelight.",
     crowdLevel: "High",
     physicalEffort: "Medium", // Walking on sand
-    image1: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/06/38/4d/petra-by-night-experience.jpg?w=1200&h=-1&s=1",
-    image2: "https://images.unsplash.com/photo-1501232856275-6aa29c42629b?w=800&q=80",
-    image3: "https://images.unsplash.com/photo-1599587289569-4a0b27dc7eb9?w=800&q=80"
+    image1: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/06/38/4d/petra-by-night-experience.jpg?w=1200&h=-1&s=1"
   },
   {
     id: 13,
@@ -143,8 +129,7 @@ export const activities = [
     crowdLevel: "Medium",
     physicalEffort: "Low",
     image1: "https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?w=800&q=80",
-    image2: "https://www.twowanderingsoles.com/wp-content/uploads/2021/10/Local-Cave-House-2-1024x683.jpg",
-    image3: "https://images.unsplash.com/photo-1533671239276-2df332b700f1?w=800&q=80"
+    image2: "https://www.twowanderingsoles.com/wp-content/uploads/2021/10/Local-Cave-House-2-1024x683.jpg"
   },
   {
     id: 14,
@@ -154,8 +139,7 @@ export const activities = [
     crowdLevel: "Low",
     physicalEffort: "Medium", // Snorkeling
     image1: "https://www.airpano.ru/files/jellyfish-lake-palau/images/image1.jpg",
-    image2: "https://images.trvl-media.com/place/6117054/d7853b4c-57ae-4385-9e31-c9fb3a730827.jpg",
-    image3: "https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=800&q=80"
+    image2: "https://images.trvl-media.com/place/6117054/d7853b4c-57ae-4385-9e31-c9fb3a730827.jpg"
   },
   {
     id: 15,
@@ -165,8 +149,7 @@ export const activities = [
     crowdLevel: "Extreme",
     physicalEffort: "High", // Dancing, heat
     image1: "https://www.tilda.com/en-ie/wp-content/uploads/sites/8/2022/04/01092146/shutterstock_190431911-1.jpg",
-    image2: "https://gccmedia.co/wp-content/uploads/2025/02/new-carnival-2.jpg",
-    image3: "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=800&q=80"
+    image2: "https://gccmedia.co/wp-content/uploads/2025/02/new-carnival-2.jpg"
   },
   {
     id: 16,
@@ -209,8 +192,7 @@ export const activities = [
     crowdLevel: "High",
     physicalEffort: "High", // Steep stairs
     image1: "https://www.travel.taipei/content/images/attractions/222129/1024x768_attractions-image-fjck6hgjre6acqcp2mhcqq.jpg",
-    image2: "https://www.travel.taipei/content/images/attractions/222136/1024x768_attractions-image-d2bf55zrf0ccp-j29xhjpg.jpg",
-    image3: "https://images.unsplash.com/photo-1505238680356-667803448bb1?w=800&q=80"
+    image2: "https://www.travel.taipei/content/images/attractions/222136/1024x768_attractions-image-d2bf55zrf0ccp-j29xhjpg.jpg"
   },
   {
     id: 20,
@@ -220,8 +202,7 @@ export const activities = [
     crowdLevel: "High",
     physicalEffort: "Medium", // Very steep steps
     image1: "https://www.agoda.com/wp-content/uploads/2024/03/Featured-image-Wat-Arun-Bangkok-Thailand.jpg",
-    image2: "https://c8.alamy.com/comp/WDBANY/wat-arun-temple-central-prang-khmer-style-tower-which-is-encrusted-with-colourful-porcelain-in-bangkok-thailand-WDBANY.jpg",
-    image3: "https://images.unsplash.com/photo-1582645609384-3c65dd4b306b?w=800&q=80"
+    image2: "https://c8.alamy.com/comp/WDBANY/wat-arun-temple-central-prang-khmer-style-tower-which-is-encrusted-with-colourful-porcelain-in-bangkok-thailand-WDBANY.jpg"
   },
   {
     id: 21,
@@ -231,8 +212,7 @@ export const activities = [
     crowdLevel: "Extreme",
     physicalEffort: "High", // Heat + Walking
     image1: "https://media.timeout.com/images/105923706/750/562/image.jpg",
-    image2: "https://www.civitatis.com/f/tailandia/bangkok/guia/mercado-chatuchak.jpg",
-    image3: "https://images.unsplash.com/photo-1623594248443-4a1618063063?w=800&q=80"
+    image2: "https://www.civitatis.com/f/tailandia/bangkok/guia/mercado-chatuchak.jpg"
   },
   {
     id: 23,
@@ -241,9 +221,8 @@ export const activities = [
     description: "Raw action and martial culture.",
     crowdLevel: "High",
     physicalEffort: "Low",
-    image1: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/09/92/4d/54.jpg",
-    image2: "https://images.unsplash.com/photo-1555597673-b21d5c935865?w=800&q=80",
-    image3: "https://images.unsplash.com/photo-1544117519-31a4b71922bb?w=800&q=80"
+    image1: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/09/92/4d/54.jpg"
+
   },
   {
     id: 24,
@@ -252,9 +231,8 @@ export const activities = [
     description: "Tourist exhilaration (Mario style).",
     crowdLevel: "Low", // Small group
     physicalEffort: "Medium", // Driving focus
-    image1: "https://www.monkey-kart.com/public/assets/images/blogs/MONKEY%20KART%20_%20Blog%202%20(2).jpg",
-    image2: "https://images.unsplash.com/photo-1574868023340-02559b954932?w=800&q=80",
-    image3: "https://images.unsplash.com/photo-1532236395709-7d70320fec2d?w=800&q=80"
+    image1: "https://www.monkey-kart.com/public/assets/images/blogs/MONKEY%20KART%20_%20Blog%202%20(2).jpg"
+
   },
   {
     id: 25,
@@ -263,9 +241,7 @@ export const activities = [
     description: "Serious cultural deep dive.",
     crowdLevel: "Low", // Restricted access
     physicalEffort: "Low",
-    image1: "https://i0.wp.com/www.touristjapan.com/wp-content/uploads/2023/03/Tokyo_Sumo_Practice_1.jpg?fit=1826%2C1000&ssl=1",
-    image2: "https://images.unsplash.com/photo-1609141444733-4f93282f1b4c?w=800&q=80",
-    image3: "https://images.unsplash.com/photo-1515255375545-d8aa40487538?w=800&q=80"
+    image1: "https://i0.wp.com/www.touristjapan.com/wp-content/uploads/2023/03/Tokyo_Sumo_Practice_1.jpg?fit=1826%2C1000&ssl=1"
   },
   {
     id: 26,
